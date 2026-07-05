@@ -9,13 +9,14 @@ import { ProjectsGrid } from "@/components/ui/projects-grid";
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const isAudioEnabledRef = useRef(false);
 
   const playBackgroundVideo = async () => {
     const video = videoRef.current;
     if (!video) return;
 
-    video.muted = false;
-    video.volume = 1;
+    video.muted = !isAudioEnabledRef.current;
+    video.volume = isAudioEnabledRef.current ? 1 : 0;
 
     try {
       await video.play();
@@ -28,12 +29,14 @@ export default function Home() {
     const video = videoRef.current;
     if (!video) return;
 
+    isAudioEnabledRef.current = false;
     video.muted = true;
     video.volume = 0;
   };
 
   useEffect(() => {
     const handleEnableAudio = () => {
+      isAudioEnabledRef.current = true;
       void playBackgroundVideo();
     };
 
@@ -58,7 +61,7 @@ export default function Home() {
         ref={videoRef}
         autoPlay
         loop
-        muted={false}
+        muted
         playsInline
         preload="auto"
         onCanPlay={() => {
