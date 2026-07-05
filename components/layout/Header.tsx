@@ -1,12 +1,25 @@
 "use client";
 
-import { Menu, Search, Bell, Volume2 } from "lucide-react";
+import { useState } from "react";
+import { Menu, Search, Bell, Volume2, VolumeX } from "lucide-react";
 
 interface HeaderProps {
   onMenuClick: () => void;
 }
 
 export function Header({ onMenuClick }: HeaderProps) {
+  const [isMuted, setIsMuted] = useState(true);
+
+  const toggleAudio = () => {
+    if (isMuted) {
+      window.dispatchEvent(new Event("enable-audio"));
+      setIsMuted(false);
+    } else {
+      window.dispatchEvent(new Event("mute-audio"));
+      setIsMuted(true);
+    }
+  };
+
   return (
     <header className="sticky top-0 z-40 w-full h-20 glass-header flex items-center justify-between px-4 md:px-8">
       <div className="flex items-center gap-4">
@@ -37,12 +50,12 @@ export function Header({ onMenuClick }: HeaderProps) {
 
         <button
           type="button"
-          onClick={() => window.dispatchEvent(new Event("enable-audio"))}
-          aria-label="Enable audio"
+          onClick={toggleAudio}
+          aria-label={isMuted ? "Enable audio" : "Mute audio"}
           className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 text-foreground/70 hover:text-white hover:bg-white/10 transition-colors sm:px-3 sm:py-2 sm:gap-2 sm:text-xs sm:font-medium"
         >
-          <Volume2 className="w-4 h-4" />
-          <span className="hidden sm:inline">Enable audio</span>
+          {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+          <span className="hidden sm:inline">{isMuted ? "Enable audio" : "Mute audio"}</span>
         </button>
 
         <div className="h-8 w-[1px] bg-glass-border mx-1"></div>

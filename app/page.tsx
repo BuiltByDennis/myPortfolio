@@ -24,16 +24,30 @@ export default function Home() {
     }
   };
 
+  const muteBackgroundVideo = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    video.volume = 0;
+  };
+
   useEffect(() => {
     const handleEnableAudio = () => {
       void playBackgroundVideo();
     };
 
+    const handleMuteAudio = () => {
+      muteBackgroundVideo();
+    };
+
     window.addEventListener("enable-audio", handleEnableAudio);
+    window.addEventListener("mute-audio", handleMuteAudio);
     void playBackgroundVideo();
 
     return () => {
       window.removeEventListener("enable-audio", handleEnableAudio);
+      window.removeEventListener("mute-audio", handleMuteAudio);
     };
   }, []);
 
