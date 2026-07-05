@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu, Search, Bell } from "lucide-react";
+import { Menu, Search, Bell, Volume2 } from "lucide-react";
 
 interface HeaderProps {
   onMenuClick: () => void;
@@ -35,6 +35,15 @@ export function Header({ onMenuClick }: HeaderProps) {
           <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-accent rounded-full border border-background"></span>
         </button>
 
+        <button
+          type="button"
+          onClick={() => window.dispatchEvent(new Event("enable-audio"))}
+          className="hidden sm:inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs font-medium text-foreground/70 hover:text-white hover:bg-white/10 transition-colors"
+        >
+          <Volume2 className="w-4 h-4" />
+          <span>Enable audio</span>
+        </button>
+
         <div className="h-8 w-[1px] bg-glass-border mx-1"></div>
 
         <div className="flex items-center gap-3">
@@ -42,10 +51,13 @@ export function Header({ onMenuClick }: HeaderProps) {
             <p className="text-sm font-medium text-white">Dennis Nyaaba</p>
             <p className="text-xs text-foreground/50">AI Developer</p>
           </div>
-          {/* Profile Picture Placeholder */}
           <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-accent p-[2px]">
             <div className="w-full h-full rounded-full bg-background flex items-center justify-center overflow-hidden">
-              <span className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-tr from-primary to-accent">DT</span>
+              <img
+                src="/profile1.jpg"
+                alt="Dennis Nyaaba"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

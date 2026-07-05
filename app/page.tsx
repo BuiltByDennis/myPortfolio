@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { ArrowRight, Sparkles, Terminal, Mail } from "lucide-react";
 import { FaWhatsapp, FaInstagram, FaXTwitter, FaDiscord } from "react-icons/fa6";
 import Link from "next/link";
@@ -5,14 +8,51 @@ import { ProfileCard } from "@/components/ui/profile-card";
 import { ProjectsGrid } from "@/components/ui/projects-grid";
 
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  const playBackgroundVideo = async () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = false;
+    video.volume = 1;
+
+    try {
+      await video.play();
+    } catch (error) {
+      console.warn("Background video autoplay was blocked by the browser:", error);
+    }
+  };
+
+  useEffect(() => {
+    const handleEnableAudio = () => {
+      void playBackgroundVideo();
+    };
+
+    window.addEventListener("enable-audio", handleEnableAudio);
+    void playBackgroundVideo();
+
+    return () => {
+      window.removeEventListener("enable-audio", handleEnableAudio);
+    };
+  }, []);
+
   return (
     <div className="flex flex-col min-h-[calc(100vh-8rem)] justify-center py-12 md:py-24 relative">
       {/* Video Background */}
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted={false}
         playsInline
+        preload="auto"
+        onCanPlay={() => {
+          void playBackgroundVideo();
+        }}
+        onLoadedData={() => {
+          void playBackgroundVideo();
+        }}
         className="fixed inset-0 w-full h-full object-cover z-[1] opacity-30 pointer-events-none"
       >
         <source src="/videos/background.mp4" type="video/mp4" />
