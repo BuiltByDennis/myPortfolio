@@ -156,9 +156,9 @@ export default function Home() {
 
         <div className="flex flex-wrap justify-center gap-6 md:gap-8">
           {[
-            { name: "WhatsApp", icon: FaWhatsapp, href: "wa.link/4ukeh1", color: "hover:text-[#25D366] hover:border-[#25D366]/50 hover:bg-[#25D366]/10" },
+            { name: "WhatsApp", icon: FaWhatsapp, href: "https://wa.me/+233594948955", color: "hover:text-[#25D366] hover:border-[#25D366]/50 hover:bg-[#25D366]/10" },
             { name: "Instagram", icon: FaInstagram, href: "https://www.instagram.com/dennistjay/", color: "hover:text-[#E1306C] hover:border-[#E1306C]/50 hover:bg-[#E1306C]/10" },
-            { name: "Gmail", icon: Mail, href: "dennyaaba@gmail.com", color: "hover:text-[#EA4335] hover:border-[#EA4335]/50 hover:bg-[#EA4335]/10" },
+            { name: "Gmail", icon: Mail, href: "mailto:dennyaaba@gmail.com", color: "hover:text-[#EA4335] hover:border-[#EA4335]/50 hover:bg-[#EA4335]/10" },
             { name: "X (Twitter)", icon: FaXTwitter, href: "https://x.com/_Dennyspark", color: "hover:text-white hover:border-white/50 hover:bg-white/10" },
             { name: "Discord", icon: FaDiscord, href: "#", color: "hover:text-[#5865F2] hover:border-[#5865F2]/50 hover:bg-[#5865F2]/10" }
           ].map((social, i) => (
