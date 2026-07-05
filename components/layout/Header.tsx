@@ -38,10 +38,11 @@ export function Header({ onMenuClick }: HeaderProps) {
         <button
           type="button"
           onClick={() => window.dispatchEvent(new Event("enable-audio"))}
-          className="hidden sm:inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs font-medium text-foreground/70 hover:text-white hover:bg-white/10 transition-colors"
+          aria-label="Enable audio"
+          className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 text-foreground/70 hover:text-white hover:bg-white/10 transition-colors sm:px-3 sm:py-2 sm:gap-2 sm:text-xs sm:font-medium"
         >
           <Volume2 className="w-4 h-4" />
-          <span>Enable audio</span>
+          <span className="hidden sm:inline">Enable audio</span>
         </button>
 
         <div className="h-8 w-[1px] bg-glass-border mx-1"></div>
