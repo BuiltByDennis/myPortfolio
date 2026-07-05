@@ -17,13 +17,13 @@ export function Header({ onMenuClick }: HeaderProps) {
           <Menu className="w-6 h-6" />
           <span className="sr-only">Open menu</span>
         </button>
-        
+
         {/* Search bar (desktop) */}
         <div className="hidden md:flex items-center relative group">
           <Search className="w-4 h-4 absolute left-3 text-foreground/40 group-focus-within:text-primary transition-colors" />
-          <input 
-            type="text" 
-            placeholder="Search projects, skills..." 
+          <input
+            type="text"
+            placeholder="Search projects, skills..."
             className="bg-white/5 border border-white/10 rounded-full py-2 pl-10 pr-4 text-sm text-white placeholder:text-foreground/40 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all w-64 lg:w-80"
           />
         </div>
@@ -34,12 +34,12 @@ export function Header({ onMenuClick }: HeaderProps) {
           <Bell className="w-5 h-5" />
           <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-accent rounded-full border border-background"></span>
         </button>
-        
+
         <div className="h-8 w-[1px] bg-glass-border mx-1"></div>
-        
+
         <div className="flex items-center gap-3">
           <div className="hidden md:block text-right">
-            <p className="text-sm font-medium text-white">Dennis Tjay</p>
+            <p className="text-sm font-medium text-white">Dennis Nyaaba</p>
             <p className="text-xs text-foreground/50">AI Developer</p>
           </div>
           {/* Profile Picture Placeholder */}

@@ -43,7 +43,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             <div className="p-2 rounded-xl bg-primary/10 text-primary">
               <Atom className="w-5 h-5" />
             </div>
-            <span className="text-lg font-semibold tracking-wide text-foreground">DENNIS.T</span>
+            <span className="text-lg font-semibold tracking-wide text-foreground">DENNIS.N</span>
           </Link>
           <button
             onClick={onClose}
@@ -62,16 +62,14 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                 key={item.name}
                 href={item.href}
                 onClick={onClose}
-                className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-all duration-200 ${
-                  isActive
+                className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-all duration-200 ${isActive
                     ? "text-white bg-primary/20 border border-primary/20"
                     : "text-foreground/70 hover:text-white hover:bg-white/5"
-                }`}
+                  }`}
               >
                 <item.icon
-                  className={`w-5 h-5 ${
-                    isActive ? "text-primary" : "text-foreground/50"
-                  }`}
+                  className={`w-5 h-5 ${isActive ? "text-primary" : "text-foreground/50"
+                    }`}
                 />
                 <span className="font-medium text-lg">{item.name}</span>
               </Link>

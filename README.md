@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dennis Nyaaba | Portfolio
+
+A modern, high-end developer portfolio built with Next.js, TypeScript, and Tailwind CSS. This project showcases my work as an AI engineer, full-stack developer, and data science-focused builder, with an emphasis on intelligent systems, product design, and polished user experiences.
+
+## Overview
+
+This portfolio is designed to present my professional identity in a way that feels both technical and visually refined. It highlights:
+
+- AI-driven product development and agentic workflows
+- Full-stack web development with modern frontend architecture
+- Data science and analytics-oriented projects
+- Contact and collaboration opportunities
+
+## Features
+
+- Responsive, immersive landing page experience
+- Project showcase section with featured work
+- Clean, modern UI with glassmorphism-inspired styling
+- Built with a component-driven architecture for maintainability
+- Optimized for fast rendering and a strong developer experience
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- Lucide Icons
+- React Icons
+- ESLint
+
+## Project Structure
+
+```bash
+app/                # App router pages and layout
+components/         # Reusable UI and layout components
+data/               # Project content and portfolio data
+design-system/      # Design system documentation and assets
+public/             # Static assets
+```
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 to view the site locally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev      # Start the local development server
+npm run build    # Create a production build
+npm run start    # Start the production server
+npm run lint     # Run ESLint checks
+```
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+This project is well-suited for deployment on Vercel or any platform that supports Next.js applications. For production deployment, the standard Next.js build and start flow is recommended.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Connect
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- GitHub: https://github.com/BuiltByDennis
+- Instagram: https://www.instagram.com/dennistjay/
+- X: https://x.com/_Dennyspark
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License

@@ -6,10 +6,10 @@ import { Home, Grid, Cpu, ChartBar, Mail, Atom } from "lucide-react";
 
 export const navItems = [
   { name: "Home", href: "/", icon: Home },
-  { name: "Projects", href: "/projects", icon: Grid },
-  { name: "AI Agents", href: "/ai-agents", icon: Cpu },
-  { name: "Data Science", href: "/data-science", icon: ChartBar },
-  { name: "Contact", href: "/contact", icon: Mail },
+  { name: "Projects", href: "/#projects", icon: Grid },
+  { name: "AI Agents", href: "/?category=ai-agents#projects", icon: Cpu },
+  { name: "Data Science", href: "/?category=data-science#projects", icon: ChartBar },
+  { name: "Contact", href: "/#contact", icon: Mail },
 ];
 
 export function Sidebar() {
@@ -23,7 +23,7 @@ export function Sidebar() {
             <Atom className="w-6 h-6 animate-[spin_10s_linear_infinite]" />
           </div>
           <span className="text-lg font-semibold tracking-wide text-foreground group-hover:text-primary transition-colors">
-            DENNIS.T
+            DENNIS.N
           </span>
         </Link>
       </div>
@@ -64,7 +64,7 @@ export function Sidebar() {
           <h4 className="text-sm font-semibold text-white mb-1">Available for work</h4>
           <p className="text-xs text-foreground/60 mb-3">Let's build something amazing together.</p>
           <Link
-            href="/contact"
+            href="/#contact"
             className="block text-center text-xs font-medium bg-primary/20 hover:bg-primary/40 text-white py-2 rounded-lg transition-colors border border-primary/30"
           >
             Hire Me
