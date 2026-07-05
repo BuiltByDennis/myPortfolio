@@ -7,8 +7,20 @@ import { ProjectsGrid } from "@/components/ui/projects-grid";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-[calc(100vh-8rem)] justify-center py-12 md:py-24 relative">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted={false}
+        playsInline
+        className="fixed inset-0 w-full h-full object-cover z-[1] opacity-30 pointer-events-none"
+      >
+        <source src="/videos/background.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       {/* Hero Section */}
-      <section className="relative w-full max-w-5xl mx-auto space-y-12 min-h-[80vh] flex flex-col justify-center">
+      <section className="relative z-[2] pointer-events-none w-full max-w-5xl mx-auto space-y-12 min-h-[80vh] flex flex-col justify-center">
         <div className="space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium animate-in fade-in slide-in-from-bottom-4 duration-700">
             <Sparkles className="w-4 h-4" />
@@ -24,7 +36,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500">
+        <div className="flex flex-col sm:flex-row items-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-500 pointer-events-auto">
           <Link href="#projects" className="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary/90 text-white font-medium rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.5)]">
             Explore Projects
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -37,7 +49,7 @@ export default function Home() {
         </div>
 
         {/* Stats / Metric Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-700">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-700 pointer-events-auto">
           {[
             { label: "AI Agents Built", value: "3" },
             { label: "Years Vibe Coding", value: "1" },
