@@ -100,7 +100,7 @@ export default function Home() {
           </Link>
 
           <Link href="https://github.com/BuiltByDennis" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 text-white font-medium rounded-xl transition-all duration-300 flex items-center justify-center gap-2 border border-white/10 glass-panel">
-            <Terminal className="w-4 h-4" />
+           <Terminal className="w-4 h-4" />
             View GitHub
           </Link>
         </div>
@@ -109,8 +109,8 @@ export default function Home() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-700 pointer-events-auto">
           {[
             { label: "AI Agents Built", value: "3" },
-            { label: "Years Vibe Coding", value: "1" },
-            { label: "Currently Learning", value: "Azura AI" },
+            { label: "Years Vibe Coding", value: "2" },
+            { label: "Currently Building", value: "CampusStay" },
             { label: "Data Science Projects", value: "2" }
           ].map((stat, i) => (
             <div key={i} className="p-6 rounded-2xl glass-panel group hover:bg-white/5 transition-colors border-t border-l border-white/10">
