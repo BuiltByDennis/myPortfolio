@@ -110,7 +110,7 @@ export default function Home() {
           {[
             { label: "AI Agents Built", value: "3" },
             { label: "Years Vibe Coding", value: "2" },
-            { label: "Currently Building", value: "CampusStay" },
+            { label: "Currently Building", value: "webapp" },
             { label: "Data Science Projects", value: "2" }
           ].map((stat, i) => (
             <div key={i} className="p-6 rounded-2xl glass-panel group hover:bg-white/5 transition-colors border-t border-l border-white/10">
